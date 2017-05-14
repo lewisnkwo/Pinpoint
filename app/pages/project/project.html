@@ -1,0 +1,79 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>
+    -->
+</ion-navbar>
+
+<ion-content class="project">
+  
+    <div style="position: relative">
+      <img [src]="project.image">
+      <button fab fab-right fab-top crimson class="fab-map" (click)="joinProject()">
+        <ion-icon name='person-add'></ion-icon>
+      </button>
+      <button fab fab-right fab-top purple class="fab-map fab-under" (click)="sendMessage()">
+        <ion-icon name='mail'></ion-icon>
+      </button>
+    </div>
+
+      <h2 class="center-text"><strong>{{project.name}}</strong></h2>
+<!--    <p class="center-text padding-xtra-small">...</p>
+    -->
+    <button ion-item (click)="joinAlerts()">
+      <ion-icon name="calendar" item-left crimson large></ion-icon>
+      <h2>Sign up to Project Updates </h2> 
+    </button>
+    
+    <ion-item>
+      <ion-icon name="clock" item-left grey large></ion-icon>
+      <h2>{{project.meeting}}</h2>
+      <p> avg. 1/2 hours a week </p>
+    </ion-item>
+    
+<!--    <ion-item class="margin-bottom-xtra-small">
+      <ion-icon name="finger-print" item-left grey large></ion-icon>
+      <h2><strong>8.1</strong></h2>
+      <p> PinPoint Match </p>
+    </ion-item>-->
+
+    <button class="join-button orange no-margin" purple full item-left (click)="joinProject()">
+      <ion-icon name="contacts"></ion-icon> Join Project
+    </button>  
+    <button class="no-margin" crimson full item-left (click)="pinContent()">
+    <ion-icon name="pin"></ion-icon> Pin
+    </button>
+
+    <ion-item class="no-margin">
+      <button crimson clear item-left>
+        <ion-icon name="pin"></ion-icon>
+        <div>{{project.pins}} Pins</div>
+      </button>
+      <button crimson clear item-left>
+        <ion-icon name="people"></ion-icon>
+        <div>{{project.buddies}} Members</div>
+      </button>
+      <ion-note item-right>
+        Last updated: 3h ago
+      </ion-note>
+    </ion-item>
+    
+    <p><ion-icon name='contacts' class="icon-size margin-left-small" crimson></ion-icon> Project Members</p>
+    <ion-scroll class="buddies" scrollX="true" scrollY="false">
+        <div class="content" id="content" [ngStyle]="{'width': contentWidth}" iteratedItems>
+            <img *ngFor="let member of getDummyProfiles, let i = index" [src]="member.image" (click)="goToUser(member, i)">
+        </div>
+    </ion-scroll>
+
+</ion-content>

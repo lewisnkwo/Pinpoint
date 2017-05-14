@@ -1,0 +1,31 @@
+.add-circle {
+    
+    .profile-photo {
+        
+        margin-top: $small-spacing;
+        margin-right: auto;
+        margin-left: auto;
+        width: 150px;
+        height: 150px;
+        border: 3px dashed #ccc;
+        
+    }
+    
+    .fill-box {
+        font-size: 150px;
+        color: #fdaeae;
+        padding-left: 14px;
+        padding-bottom: 10px;
+    }
+    
+    .circle-location textarea {
+        height: 12.5vh;
+    }
+    
+    p {
+        font-size: 12px;
+        padding: 0px 15px;
+        color: #666;
+    }
+
+}

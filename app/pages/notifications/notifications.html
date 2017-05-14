@@ -1,0 +1,72 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="notifications">
+  
+    <ion-list>
+      
+      <ion-item>
+        <ion-avatar item-right>
+          <img src="https://randomuser.me/api/portraits/women/23.jpg">
+          <p class="view-profile">View Profile</p>
+        </ion-avatar>
+        <p class="text-size">Someone wants to join your project'<strong>Shaping Technology</strong>'</p>
+        <p class="notification-stamp">Today at 10:00 am</p>
+      </ion-item>
+      
+<!--      <ion-item>
+        <ion-avatar item-right>
+          <img src="https://randomuser.me/api/portraits/men/89.jpg">
+          <p class="view-profile">View Event</p>
+        </ion-avatar>
+        <p class="text-size"><strong>James Blake</strong> updated the event: 'Melodies on a River'</p>
+        <button purple small><ion-icon name='notifications-off'></ion-icon> Pause</button>
+        <p class="notification-stamp">Yesterday at 09:47 pm</p>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar item-right>
+          <img src="https://randomuser.me/api/portraits/women/25.jpg">
+          <p class="view-profile">View Event</p>
+        </ion-avatar>
+        <p class="text-size"><strong>Alexis Luthor</strong> updated the event: 'Batman v Superman'</p>
+        <button purple small outline><ion-icon name='notifications'></ion-icon> Resume</button>
+        <p class="notification-stamp">Yesterday at 08:43 pm</p>
+      </ion-item>-->
+      
+      <ion-item>
+        <ion-avatar item-right>
+          <img src="https://randomuser.me/api/portraits/women/50.jpg">
+          <p class="view-profile"><ion-icon name='mail-open'></ion-icon> View</p>
+        </ion-avatar>
+        <p class="text-size"><strong>Lea Rock</strong> just sent you a message: <em>'Hey dude, are you coming to...'</em></p>
+        <button crimson small><ion-icon name='arrow-dropright'></ion-icon> Reply</button>
+        <button danger small><ion-icon name='close-circle'></ion-icon> Block</button>
+        <p class="notification-stamp">Yesterday at 04:21 pm</p>
+      </ion-item>
+      
+    </ion-list>
+    
+    <div class="mark">
+          <button block outline crimson item-left>
+              Mark all as read <ion-icon name='done-all'></ion-icon>
+              <ion-badge item-right crimson>2</ion-badge>
+          </button>
+    </div>
+  
+</ion-content>

@@ -1,0 +1,27 @@
+
+<ion-navbar *navbar crimson>
+  <ion-title>Login</ion-title>
+</ion-navbar>
+
+<ion-content padding class="login">
+  
+  <ion-list inset>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    
+    <button block class="margin-top-small" (click)="loginUser()">Login</button>
+    
+    <button block linkedin class="margin-top-small" (click)="loginUser()">Sign In with LinkedIn</button>
+    <!-- sign in with dummy profile for now -->
+
+  </ion-list>
+  
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+   <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+    <ion-buttons (click)="openRightMenu()" end>    
+        <button>
+            <ion-icon name='options'></ion-icon>
+        </button>
+    </ion-buttons>
+    
+</ion-navbar>
+
+<ion-content class="projects" iteratedItems>
+
+  <ion-toolbar light>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Search projects..." [hideCancelButton]="shouldHideCancel"></ion-searchbar>
+  </ion-toolbar>
+ <ion-list>
+    <ion-item-sliding *ngFor="let project of items, let i = index" class="thumb">
+      <button ion-item (click)="goToProject()">
+          <ion-thumbnail item-left>
+            <img [src]="project.image">
+            <ion-row baseline class="center-text">
+                <ion-col width-50><p class="counter">{{project.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-50><p class="counter">{{project.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+          </ion-thumbnail>
+          <h2>{{project.name}}</h2>
+          <p><ion-icon name='time' grey> </ion-icon> Next Meeting: {{project.meeting}}</p>
+          <p><ion-icon name='navigate' grey> </ion-icon> {{project.location}}</p>
+          <p><ion-icon name='map' grey> </ion-icon> {{project.address}}</p>
+          <p>{{project.department}}</p>
+          <button class="inner-button" crimson clear><ion-icon name='eye'></ion-icon> View project</button>
+          <ion-scroll class="members" scrollX="false" scrollY="true">
+              <div class="content" id="content" [ngStyle]="{'width': contentWidth}">
+                  <img *ngFor="let member of getDummyProfiles, let i = index" [src]="member.image">
+              </div>
+          </ion-scroll>
+      </button> 
+          <ion-item-options>
+            <button class="padding-xtra-small" orange (click)="messageProject()">Message
+              <ion-icon name='mail'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" crimson (click)="pinProject(project)">Pin
+              <ion-icon name='pin'></ion-icon>
+            </button>
+          </ion-item-options>     
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>
+
+<button fab orange fab-top fab-right class="fab-projects" style="z-index: 9999" (click)="goToAddProject()">
+  <ion-icon name='add' is-active="false"></ion-icon> <ion-icon name='contacts' is-active="false"></ion-icon>
+</button>

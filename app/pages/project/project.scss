@@ -1,0 +1,23 @@
+.project {
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .buddies {
+        height: 100px;
+        
+        img {
+            @extend .avatar-small;
+            margin: 5px;
+            border-radius: 50%;
+            float: left;
+        }
+    }
+    
+    .fab-under {
+        top: 76px;
+    }
+
+}

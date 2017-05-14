@@ -1,0 +1,37 @@
+.explore {
+        
+    .buddies {
+        height: 200px;
+        
+        img {
+            @extend .avatar;
+            margin: 10px;
+        }
+    }
+    
+    .circles {
+        height: 200px;
+
+        img {
+            @extend .avatar;
+            margin: 10px;
+            border-radius: 50%;
+        }
+    }
+    
+    .horizons {
+        height: 200px;
+
+        img {
+            @extend .avatar;
+            margin: 10px;
+        }
+        
+        .rounded {
+            border-radius: 50%;
+        }
+        
+        
+    }
+
+}

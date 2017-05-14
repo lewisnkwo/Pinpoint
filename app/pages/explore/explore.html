@@ -1,0 +1,59 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content padding class="explore">
+    
+    <h4>Buddies You May Like: </h4>
+    <ion-scroll class="buddies" scrollX="true" scrollY="false">
+        <div class="content" id="content" [ngStyle]="{'width': contentWidth}" iteratedItems>
+            <img *ngFor="let buddy of getDummyProfiles, let i = index" [src]="buddy.image" (click)="goToUser(buddy, i)">
+        </div>
+    </ion-scroll>
+    
+    <h4>Trending Circles For You: </h4>
+    <ion-scroll class="circles" scrollX="true" scrollY="false">
+        <div class="content" id="content" [ngStyle]="{'width': contentWidth}" iteratedItems>
+            <img *ngFor="let circle of getDummyCircles[0].info, let i = index" [src]="circle.image" (click)="goToCircle(circle)">
+        </div>
+    </ion-scroll>
+    
+    <h4>New Horizons: </h4>
+    <ion-scroll scrollX="true" scrollY="false" class="horizons">
+        <div class="content" id="content" [ngStyle]="{'width': contentWidth}" iteratedItems>
+            <img class="rounded" [src]="imgPath">
+            <img [src]="getDummyProfiles[3].image">
+            <img [src]="getDummyProfiles[7].image">
+            <img class="rounded" [src]="imgPath3">
+            <img [src]="getDummyProfiles[4].image">
+            <img [src]="getDummyProfiles[2].image">
+            <img class="rounded" [src]="imgPath2">
+            <img [src]="getDummyProfiles[1].image">
+            <img [src]="getDummyProfiles[0].image">           
+        </div>
+    </ion-scroll>
+  
+</ion-content>
+
+<ion-toolbar position="bottom">
+     <ion-buttons start>
+        <button (click)="goBack()" crimson>
+            <ion-icon name="arrow-dropleft"></ion-icon> Back 
+        </button>
+    </ion-buttons> 
+
+</ion-toolbar>

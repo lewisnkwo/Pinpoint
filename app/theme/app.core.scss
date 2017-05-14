@@ -1,0 +1,297 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import '../pages/index/index';
+@import '../pages/tabs/tabs';
+@import '../pages/landing/landing';
+@import '../pages/signup/signup';
+@import '../pages/who/who';
+@import '../pages/join/join';
+@import '../pages/uni/uni';
+@import '../pages/me/me';
+@import '../pages/search/search';
+@import '../pages/results-search/results-search';
+@import '../pages/explore/explore';
+@import '../pages/search-history/search-history';
+@import '../pages/login/login';
+@import '../pages/edit-me/edit-me';
+@import '../pages/buddies/buddies';
+@import '../pages/profile/profile';
+@import '../pages/whats-on/whats-on';
+@import '../pages/interactivity/interactivity';
+@import '../pages/settings/settings';
+@import '../pages/notifications/notifications';
+@import '../pages/add-circle/add-circle';
+@import '../pages/circle/circle';
+@import '../pages/circles/circles';
+@import '../pages/pins/pins';
+@import '../pages/join/join';
+@import '../pages/people/people';
+@import '../pages/profile-detail/profile-detail';
+@import '../pages/add-project/add-project';
+@import '../pages/projects/projects';
+@import '../pages/project/project';
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+.center-text {
+    text-align: center;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.margin-top-small {
+    margin-top: $small-spacing;
+}
+
+.padding-top-small {
+    padding-top: $small-spacing;
+}
+
+.margin-bottom-small {
+    margin-bottom: $small-spacing;
+}
+
+.margin-bottom-xtra-small {
+    margin-bottom: $small-spacing / 2;
+}
+
+.padding-xtra-small {
+    padding: $small-spacing / 2;
+}
+
+.padding-top-small {
+    padding-bottom: $small-spacing;
+}
+
+.margin-left-small {
+    padding-left: 10px;
+}
+
+.segment-icon {
+    font-size: 20px !important;
+}
+
+.padding-small {
+    padding: 20px;
+}
+
+.padding-xtra-small {
+    padding: 10px;
+}
+
+.padding-sides-small {
+    padding-left: $small-spacing;
+    padding-right: $small-spacing;
+}
+
+.margin-sides-small {
+    margin-left: $small-spacing;
+    margin-right: $small-spacing;
+}
+
+.capitalise {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: capitalize;
+}
+
+.italicise {
+    font-style: italic;
+}
+
+.bolden {
+    font-weight: bold;
+}
+
+.crimsonise {
+    color: crimson !important;
+}
+
+.circular {
+    border-radius: 50%;
+}
+
+/*** Pinpoint Directives ***/
+
+.pinpoint-directive-base {
+    font-size: 12px;
+    color: #fff;
+    text-transform: lowercase;
+    padding: 10px;
+    margin: 5px;
+}
+
+.pinpoint-directive-base-small {
+    font-size: 12px;
+    color: #fff;
+    text-transform: lowercase;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 80px;
+    margin: 5px;
+}
+
+.started {
+    
+    @extend .pinpoint-directive-base;
+    background-color: #ff8c1a;
+
+}
+
+.completed {
+
+    @extend .pinpoint-directive-base;
+    background-color: #00b300;
+
+}
+
+.deprecated {
+
+    @extend .pinpoint-directive-base;
+    background-color: #ff0000;
+}
+
+.started-small {
+    
+    @extend .pinpoint-directive-base-small;
+    background-color: #ff8c1a;
+
+}
+
+.completed-small {
+
+    @extend .pinpoint-directive-base-small;
+    background-color: #00b300;
+
+}
+
+.deprecated-small {
+
+    @extend .pinpoint-directive-base-small;
+    background-color: #ff0000;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+}
+
+.avatar-small {
+    width: 75px;
+    height: 75px;
+}
+
+.avatar-xtra-small {
+    width: 40px;
+    height: 40px;
+}
+
+textarea {  
+    height: 25vh;
+    border: none;
+    max-width: 100%;
+    width: 100vw;
+    resize: vertical;
+}
+
+ion-page.profile-pin {
+    background-color: transparent;
+}
+
+ion-page.circle-pin {
+    background-color: transparent;
+}
+
+ion-page.dummy-circle-pin {
+    background-color: transparent;
+}
+
+.pin-modal {
+    background-color: transparent;
+}
+
+.pin-content {
+    padding: 30px;
+    background-color: crimson;
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 70px;
+    
+    p {
+        color: #fff;
+    }
+    
+    .pin-ok {
+        padding: 5px 30px;
+    }
+}
+
+.pin-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.pin-image {
+    margin: 0 auto;
+    @extend .avatar;
+    border-radius: 50%;
+}
+
+.directive {
+    font-size: 40px;
+}
+
+.navbar-logo {
+    width: 30px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.pin-logo {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-border {
+    border: none;   
+}
+
+.medium-logo {
+    margin: 0 auto;
+    display: block;
+}
+
+.header-text {
+    text-align: center;
+    color: crimson;
+    font-size: 17px;
+}
+
+.header-text-black {
+    text-align: center;
+    color: #000;
+    font-size: 17px;
+}
+
+.reduce-margin-header {
+    margin: 5px 0px;
+}

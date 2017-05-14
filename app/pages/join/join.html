@@ -1,0 +1,117 @@
+<ion-content class="join" padding grid-page>
+  
+  <img class="medium-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/general-logo.png" width="75px" height="75px">
+  
+  <p class="header-text">Select any of your interests</p>
+
+  <ion-row class="center-text interests" (click)="goNext()">    
+      <ion-col width-33><ion-icon name="brush" class="teal"></ion-icon><br><span class="teal">DESIGN</span>
+      </ion-col>
+      <ion-col width-33><ion-icon name="logo-android" crimson></ion-icon><br><span class="crimson">ROBOTIC</span>
+      </ion-col>
+      <ion-col width-33><ion-icon name="bicycle" class="gold"></ion-icon><br><span class="gold">SPORT</span>
+      </ion-col>
+  </ion-row>
+  <ion-row class="center-text interests" (click)="goNext()">    
+      <ion-col width-33><ion-icon name="cog" class="blood-orange"></ion-icon><br><span class="blood-orange">ENGINEERING</span>
+      </ion-col>
+      <ion-col width-33><ion-icon name="leaf" class="turquoise"></ion-icon><br><span class="turquoise">ENVIRONMENT</span>
+      </ion-col>
+      <ion-col width-33><ion-icon name="globe" class="pink"></ion-icon><br><span class="pink">HUMANITARIAN</span>
+      </ion-col>
+  </ion-row>
+
+  <button block crimson large clear (click)="showMore()"><ion-icon name="more-outline"></ion-icon></button>
+   
+  <p class="header-text">What is your university?</p>
+  
+  <p class="header-text-black">Imperial college</p>
+  
+  <button block crimson large clear (click)="goNext()">Finish</button>
+  
+<!--    <ion-slides #circleSlider pager="false" [options]="circleSlideOptions">
+      <ion-slide class="slide-main">
+        <ion-card>
+      
+          <div style="position: relative">
+            <img src="https://pinp-draft.s3.amazonaws.com/yoga.jpg">
+          </div>
+          
+          <h3 class="slide-title">Yoga Amatuers</h3>
+          <p class="center-text padding-xtra-small">You don't need to be 25, supple, a size 6 and to eat tofu to benefit from yoga! It suits any body shape or life stage – kids, teens, pregnancy, middle and advanced years. Our society will offer something perfect for you.</p>
+
+          <button class="join-button orange no-margin" (click)="goToCircle()" orange full item-left>
+            <ion-icon name="contacts"></ion-icon> Join Circle
+          </button>  
+
+          <ion-item class="no-margin">
+            <button crimson clear item-left>
+              <ion-icon name="pin"></ion-icon>
+              <div>23 Pins</div>
+            </button>
+            <button crimson clear item-left>
+              <ion-icon name="people"></ion-icon>
+              <div>29 Members</div>
+            </button>
+          </ion-item>
+
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="slide-main">
+        <ion-card>
+      
+          <div style="position: relative">
+            <img src="https://pinp-draft.s3.amazonaws.com/foodclub.jpg">
+          </div>
+
+          <h3 class="slide-title">Local Food Club</h3>
+          <p class="center-text padding-xtra-small">Are you overwhelmed and confused when it comes to healthy eating? Think doing it at home is complicated, expensive and unattainable? Want to see what’s all the fuss about the best uni food club?</p>
+
+          <button class="join-button orange no-margin" (click)="goToCircle()" orange full item-left>
+            <ion-icon name="contacts"></ion-icon> Join Circle
+          </button>  
+
+          <ion-item class="no-margin">
+            <button crimson clear item-left>
+              <ion-icon name="pin"></ion-icon>
+              <div>15 Pins</div>
+            </button>
+            <button crimson clear item-left>
+              <ion-icon name="people"></ion-icon>
+              <div>50 Members</div>
+            </button>
+          </ion-item>
+        </ion-card>
+
+      </ion-slide>
+      <ion-slide class="slide-main">
+        <ion-card>
+      
+          <div style="position: relative">
+            <img src="https://pinp-draft.s3.amazonaws.com/scienceclub.jpg">
+          </div>
+
+          <h3 class="slide-title">Science Society</h3>
+          <p class="center-text padding-xtra-small">Come over; have a drink and help us tackle the biggest concepts in science and discover the great ideas that are changing the world we live in.</p>
+
+          <button class="join-button orange no-margin" (click)="goToCircle()" orange full item-left>
+            <ion-icon name="contacts"></ion-icon> Join Circle
+          </button>  
+
+          <ion-item class="no-margin">
+            <button crimson clear item-left>
+              <ion-icon name="pin"></ion-icon>
+              <div>43 Pins</div>
+            </button>
+            <button crimson clear item-left>
+              <ion-icon name="people"></ion-icon>
+              <div>12 Members</div>
+            </button>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>-->
+
+</ion-content>
+
+

@@ -1,0 +1,62 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content padding class="results-search">
+    
+  <h2 class="center-text padding">We've found 9+ people you may be interested in:<br /><ion-icon class="directive" crimson name="swap"></ion-icon></h2>
+
+  <ion-slides pager="false">
+    <ion-slide *ngFor="let slide of dummyProfiles, let i = index" class="slide-main">
+        <ion-thumbnail class="icons" item-left>
+        <img [src]="slide.image" (click)="goToProfile(slide)">
+            <ion-row baseline class="center-text">
+                <ion-col width-25><p class="counter">{{slide.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-25><p class="counter">{{slide.circles}}</p><ion-icon name='contacts' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-25><p class="counter">{{slide.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-25><p class="counter"><strong>9.3</strong></p><ion-icon name='finger-print' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+        </ion-thumbnail>
+
+        <button block outline small crimson (click)="goToProfile(slide)"> 
+            <ion-icon name="person"></ion-icon> View their profile
+        </button>
+   
+      <h2 class="slide-title" [innerHTML]="slide.name"></h2>
+      <p [innerHTML]="slide.university"></p>
+      <p class="skills-title center-text">Skills</p>
+      <span class="skills" *ngFor="let skill of dummyProfiles[i].skills | shuffle"><ion-icon name='checkbox' class="icon-size" crimson></ion-icon> {{skill.name}} </span>
+      <p class="interests-title center-text">Interests</p>
+      <span class="interests" *ngFor="let interest of dummyProfiles[i].interests | shuffle"><ion-icon name='checkbox-outline' class="icon-size" crimson></ion-icon> {{interest.name}} </span>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+<ion-toolbar position="bottom">
+    <ion-buttons start>
+        <button (click)="goBack()" crimson>
+            <ion-icon name="arrow-dropleft"></ion-icon> Back 
+        </button>
+    </ion-buttons> 
+
+<!--    <ion-buttons end>
+        <button crimson (click)="goNext()">
+            Save <ion-icon name="done-all"></ion-icon>
+        </button>
+    </ion-buttons>-->
+</ion-toolbar>

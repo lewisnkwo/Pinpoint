@@ -1,0 +1,60 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="settings">
+  
+    <ion-list>
+
+      <ion-item-divider light>App Settings</ion-item-divider>
+      
+      <ion-item>
+        <h2><strong>Profile Settings</strong></h2>
+        <p>Edit your profile, categories & more </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Account Settings</strong></h2>
+        <p>Edit your University, Department, type of account & more </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Nearby Buddy Warning</strong></h2>
+        <p>Customise security settings for NBW </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Who Can Contact Me</strong></h2>
+        <p>Manage messaging, meet-ups, etc... </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Geolocation</strong></h2>
+        <p>Manage location services & privacy </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Discovery Preferences</strong></h2>
+        <p>Manage who you want to see, and whom to be seen by </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>Report an Issue</strong></h2>
+        <p>Report an issue with the app, a profile, or more </p>
+      </ion-item>
+      <ion-item>
+        <h2><strong>FAQ</strong></h2>
+        <p>View PinPoint's Frequently Asked Questions</p>
+      </ion-item>
+
+    </ion-list>
+  
+</ion-content>

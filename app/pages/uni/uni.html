@@ -1,0 +1,31 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="my-university">
+ 
+    <img src="https://pinp-draft.s3-eu-west-1.amazonaws.com/imperial.jpg">
+    
+    <div class="header">
+        Imperial College London
+    </div>
+    <div class="desc">
+        Imperial College London is a public research university located in London, United Kingdom. It was founded by Prince Albert who envisioned an area composed of the Natural History Museum, Victoria and Albert Museum, Royal Albert Hall and the Imperial Institute.<br><br> The Imperial Institute was opened by Queen Victoria, his wife, who laid the first stone. The college has expanded its coursework to medicine through mergers with St Mary's Hospital. In 2004, Queen Elizabeth II opened the Imperial College Business School.
+    </div>
+    <button full crimson (click)="goToWhatsOn()">View What's On</button>
+  
+</ion-content>

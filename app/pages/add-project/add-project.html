@@ -1,0 +1,94 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="add-circle" padding>
+  
+ <h4 class="center-text bolden">Create your own PinPoint Project</h4>
+  
+    <ion-list>
+      
+      <ion-list-header class="center-text margin-top-small">
+          Main Info
+      </ion-list-header>  
+      
+          <ion-item class="center-text">
+              <ion-label>Project Name</ion-label>
+              <ion-input type="text" placeholder="e.g. FinTech Society"></ion-input>
+          </ion-item>
+          
+      <ion-item>
+      <ion-label>Project Type</ion-label>
+      <ion-select okText="Okay">
+          <ion-option value="bacon" checked="true">University/College Society</ion-option>
+          <ion-option value="olives">External Society</ion-option>
+          <ion-option value="peppers">Local Business/Charity</ion-option>
+          <ion-option value="mushrooms">Other Group</ion-option>
+      </ion-select>
+      </ion-item>
+      
+      <ion-item>
+      <ion-label>Frequency</ion-label>
+      <ion-select okText="Okay">
+          <ion-option value="bacon" checked="true">Once a month</ion-option>
+          <ion-option value="olives">Twice a month </ion-option>
+          <ion-option value="peppers">Every week</ion-option>
+          <ion-option value="mushrooms">Twice a week</ion-option>
+          <ion-option value="mushrooms">More than twice a week</ion-option>
+      </ion-select>
+      </ion-item>
+      
+     <ion-item>
+        <ion-label> Active</ion-label>
+        <ion-toggle crimson checked="true"></ion-toggle>
+      </ion-item>
+      
+      <ion-list-header class="center-text margin-top-small">
+          Description
+      </ion-list-header>  
+      <!--Use <ion-textarea></ion-textarea> instead-->
+      <ion-item>
+        <textarea class="textarea-general" type="textarea" placeholder="Our project..." wrap="hard"></textarea>
+      </ion-item>
+
+      <ion-list-header class="center-text">
+          Location
+      </ion-list-header>  
+      
+      <ion-item class="circle-location">
+        <textarea class="textarea-general" type="textarea" placeholder="We are located..." wrap="hard"></textarea>
+      </ion-item>
+      
+    <div class="profile-photo">
+        <ion-icon *ngIf="!photoTaken" name="contacts" class="fill-box"></ion-icon>
+        <div *ngIf="photoTaken"><img class="photo" [src]="photo"></div>
+    </div>
+      
+        <button block crimson class="upload-photo margin-top-small margin-bottom-small" (click)="takePhoto()"> <ion-icon name="camera"></ion-icon> Take Photo</button>
+      
+        <button block crimson outline class="upload-photo margin-top-small margin-bottom-small" (click)="uploadPhoto()"> <ion-icon name="cloud-upload"></ion-icon> Upload Project Photo</button>
+      
+      <ion-item>
+          <ion-label>Project Capacity</ion-label>
+          <ion-input type="number" placeholder="e.g. '100'"></ion-input>
+      </ion-item>
+      <p class="no-padding">Set maximum amount of users that can join your project.</p>
+    
+    </ion-list> 
+  
+        <button block crimson (click)="goBack()"> <ion-icon name="contacts"></ion-icon> Create</button>
+</ion-content>

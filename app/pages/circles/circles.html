@@ -1,0 +1,63 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+<!--
+    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="circles" iteratedItems>
+
+  <ion-toolbar light>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Search your circles..." [hideCancelButton]="shouldHideCancel"></ion-searchbar>
+  </ion-toolbar>
+ <ion-list>
+    <ion-item-sliding *ngFor="let circle of items, let i = index" class="thumb">
+      <button ion-item (click)="goToCircle()">
+          <ion-thumbnail item-left>
+            <img [src]="circle.image">
+            <ion-row baseline class="center-text">
+                <ion-col width-50><p class="counter">{{circle.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-50><p class="counter">{{circle.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+          </ion-thumbnail>
+          <h2>{{circle.name}}</h2>
+          <p><ion-icon name='time' grey> </ion-icon> Next Meeting: {{circle.meeting}}</p>
+          <p><ion-icon name='navigate' grey> </ion-icon> {{circle.location}}</p>
+          <p><ion-icon name='map' grey> </ion-icon> {{circle.address}}</p>
+          <p>{{circle.department}}</p>
+          <button class="inner-button" crimson clear><ion-icon name='eye'></ion-icon> View circle</button>
+          <ion-scroll class="members" scrollX="false" scrollY="true">
+              <div class="content" id="content" [ngStyle]="{'width': contentWidth}">
+                  <img *ngFor="let member of getDummyProfiles, let i = index" [src]="member.image">
+              </div>
+          </ion-scroll>
+      </button> 
+          <ion-item-options>
+            <button class="padding-xtra-small" orange (click)="messageCircle()">Message
+              <ion-icon name='mail'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" crimson (click)="pinCircle(circle)">Pin
+              <ion-icon name='pin'></ion-icon>
+            </button>
+          </ion-item-options>     
+    </ion-item-sliding>
+  </ion-list>
+  
+<!--  <p class="center-text padding-xtra-small"> Get involved! You can find out more about groups at Imperial College here:</p>
+  <button full crimson (click)="goToUni()"><ion-icon name='home'></ion-icon> Go to University</button>-->
+</ion-content>
+
+<button fab orange fab-top fab-right class="fab-circles" style="z-index: 9999" (click)="goToAddCircle()">
+  <ion-icon name='add' is-active="false"></ion-icon> <ion-icon name='contacts' is-active="false"></ion-icon>
+</button>

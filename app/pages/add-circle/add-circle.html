@@ -1,0 +1,91 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>
+    -->
+</ion-navbar>
+
+<ion-content class="add-circle" padding>
+  
+ <h4 class="center-text bolden">Create your own PinPoint Circle</h4>
+  
+    <ion-list>
+      
+      <ion-list-header class="center-text margin-top-small">
+          Main Info
+      </ion-list-header>  
+      
+        <ion-item class="center-text">
+            <ion-label>Circle Name</ion-label>
+            <ion-input type="text" placeholder="e.g. Art Society"></ion-input>
+        </ion-item>
+          
+      <ion-item>
+      <ion-label>Circle Type</ion-label>
+      <ion-select okText="Okay">
+          <ion-option value="bacon" checked="true">University/College Society</ion-option>
+          <ion-option value="olives">External Society</ion-option>
+          <ion-option value="peppers">Local Business/Charity</ion-option>
+          <ion-option value="mushrooms">Other Group</ion-option>
+      </ion-select>
+      </ion-item>
+      
+      <ion-item>
+      <ion-label>Frequency</ion-label>
+      <ion-select okText="Okay">
+          <ion-option value="bacon" checked="true">Once a month</ion-option>
+          <ion-option value="olives">Twice a month </ion-option>
+          <ion-option value="peppers">Every week</ion-option>
+          <ion-option value="mushrooms">Twice a week</ion-option>
+          <ion-option value="mushrooms">More than twice a week</ion-option>
+      </ion-select>
+      </ion-item>
+      
+     <ion-item>
+        <ion-label> Active</ion-label>
+        <ion-toggle crimson checked="true"></ion-toggle>
+      </ion-item>
+      
+      <ion-list-header class="center-text margin-top-small">
+          Description
+      </ion-list-header>  
+      <!--Use <ion-textarea></ion-textarea> instead-->
+      <ion-item>
+        <textarea class="textarea-general" type="textarea" placeholder="Our society is..." wrap="hard"></textarea>
+      </ion-item>
+
+      <ion-list-header class="center-text">
+          Location
+      </ion-list-header>  
+      
+      <ion-item class="circle-location">
+        <textarea class="textarea-general" type="textarea" placeholder="We are located..." wrap="hard"></textarea>
+      </ion-item>
+      
+      <div class="profile-photo">
+          <ion-icon name="contacts" class="fill-box"></ion-icon>
+      </div>
+      
+        <button block crimson outline class="upload-photo margin-top-small margin-bottom-small"> <ion-icon name="cloud-upload"></ion-icon> Upload Circle Photo</button>
+      
+      <ion-item>
+          <ion-label>Circle Capacity</ion-label>
+          <ion-input type="number" placeholder="e.g. '100'"></ion-input>
+      </ion-item>
+      <p class="no-padding">Set maximum amount of users that can join your circle.</p>
+    
+    </ion-list> 
+  
+        <button block crimson (click)="goToCircle()"> <ion-icon name="contacts"></ion-icon> Create</button>
+</ion-content>

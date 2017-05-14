@@ -1,0 +1,37 @@
+<ion-content padding class="who-are-you">
+     
+    <img class="medium-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/general-logo.png" width="75px" height="75px">
+    
+    <p class="header-text">Name</p>
+
+    <ion-list>
+        <ion-item class="center-text">
+            <ion-input type="text" placeholder="Bryan Fox" ></ion-input>
+        </ion-item>
+    
+        <ion-segment [(ngModel)]="gender" class="margin-bottom-small segment-padding" crimson>
+            <ion-segment-button value="male" class="icon-padding">
+            <ion-icon name="man" class="who-icon-size"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="female" class="icon-padding">
+            <ion-icon name="woman" class="who-icon-size"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>        
+        
+    </ion-list>  
+    
+    <p class="header-text">What about a picture of you?</p>
+    
+    <div class="profile-photo">
+        <div (click)="takePhoto()"><ion-icon *ngIf="!photoTaken" name="person-add" class="fill-box"></ion-icon></div>
+        <div *ngIf="photoTaken"><img class="photo" [src]="photo"></div>
+    </div>
+
+    <button *ngIf="photoTaken" block crimson outline class="upload-photo margin-top-small margin-bottom-small" (click)="takePhoto()"> <ion-icon name="camera"></ion-icon> Take Another</button>
+
+    <button *ngIf="photoTaken" block crimson class="upload-photo margin-top-small margin-bottom-small" (click)="uploadPhoto()"> <ion-icon name="person"></ion-icon> Upload Photo</button>
+    
+    <button block crimson large clear (click)="goNext()">Next</button>
+              
+</ion-content>
+

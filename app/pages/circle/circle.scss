@@ -1,0 +1,18 @@
+.circle {
+
+    .buddies {
+        height: 100px;
+        
+        img {
+            @extend .avatar-small;
+            margin: 5px;
+            border-radius: 50%;
+            float: left;
+        }
+    }
+    
+    .fab-under {
+        top: 76px;
+    }
+
+}

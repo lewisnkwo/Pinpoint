@@ -1,0 +1,93 @@
+$desc-font-size: 14px;
+
+.my-university {
+    
+    .photo-stream {
+        background-image: url('../../img/imperial.jpg');
+        background-color: #222;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto;
+        height: 200px;
+    }
+    
+    .header {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-size: 24px;
+    }
+    
+    .desc {
+        background-color: #f3f3f3;
+        color: #444;
+        padding: 15px 25px 15px 15px;
+        text-align: center;
+        font-size: $desc-font-size;
+    }
+    
+
+    .sub-header {
+        background: #DC143C;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }   
+    
+    .bottom-half {
+        
+        background-color: #ccc;
+        width: 100%;
+        
+        .bottom-left {
+            width: 50%;
+            display: block;
+            float: left;
+            background: #dec5ca;
+            text-align: center;
+            font-size: $desc-font-size;
+
+            p {
+                margin-bottom: 130px; 
+            }
+            
+
+        }
+        
+        .bottom-right {
+            width: 50%;
+            display: block;
+            float: left;
+            background: #ededed;
+            text-align: center;
+            font-size: $desc-font-size;
+            
+            p {
+                margin-bottom: 130px; 
+            }
+            
+        }
+        
+        .logo {
+            width: $logo-height / 2;
+            height: $logo-height / 2;
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            margin-left: -($logo-height / 4);
+            background-color: transparent;
+            border-radius: 10%;
+            background-image: url('../../img/logo.png');
+            background-size: cover;
+        } 
+        
+    }
+    
+
+
+}
+

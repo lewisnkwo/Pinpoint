@@ -1,0 +1,54 @@
+<ion-menu [content]="content" side="left" swipeEnabled="false">
+
+    <ion-toolbar crimson>
+        <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+        <ion-list>
+            <ion-item (click)="goToMe()">
+            <ion-avatar item-left>
+                <img src="https://randomuser.me/api/portraits/men/23.jpg">
+            </ion-avatar>
+            <h2><strong>Demo User</strong></h2>
+            <p><ion-icon name='arrow-dropright' class="icon-size" crimson></ion-icon> Last login: Today</p>
+            </ion-item>
+            <button ion-item *ngFor="let p of menuItems, let i = index" (click)="openPage(p, i)">
+                {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+
+    </ion-menu>
+
+    <ion-menu [content]="content" side="right" swipeEnabled="false">
+
+        <ion-toolbar crimson>
+        <ion-title>Options</ion-title>
+        </ion-toolbar>
+
+        <ion-content>
+            
+            <ion-list>
+                <ion-item>
+                    <ion-label>Hide Pinned</ion-label>
+                    <ion-toggle crimson value="foo" checked="false"></ion-toggle>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Show Suggested</ion-label>
+                    <ion-toggle crimson value="foo" [checked]="suggestedBool" (click)="showSuggested()"></ion-toggle>
+                </ion-item>
+                <ion-list-header class="center-text margin-top-small">
+                    Criteria
+                </ion-list-header> 
+                <p class="center-text">Only show with:</p>
+                <ion-searchbar crimson placeholder="Enter skills..." style="margin-bottom: 10px;"></ion-searchbar>
+                <ion-searchbar crimson placeholder="Enter interests..."></ion-searchbar>
+                <button full crimson class="margin-top-small" (click)="filterPeople()"><ion-icon name='funnel'></ion-icon> Filter</button>
+            </ion-list>     
+            
+        </ion-content>
+
+    </ion-menu>
+
+    <ion-nav id="nav" #content #mainNav [root]="rootPage" swipeBackEnabled="false"></ion-nav> 

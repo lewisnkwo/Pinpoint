@@ -1,0 +1,31 @@
+.notifications {
+    
+    ion-label {
+        text-overflow: initial;
+        white-space: inherit;
+    }
+    
+    ion-avatar img {
+        margin: 0 auto;
+    }
+    
+    .text-size {
+        font-size: 15px;
+    }
+    
+    .view-profile {
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .notification-stamp {
+        font-size: 10px;
+        font-style: italic;
+    }
+    
+    .mark {
+        width: 100%;
+        padding: 0px 40px 20px 40px;
+    }
+
+}

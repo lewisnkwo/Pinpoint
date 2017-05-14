@@ -1,0 +1,25 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+    <ion-buttons (click)="goToNotifications()" end>
+        <button>
+            <ion-icon name='mail'></ion-icon>
+        </button>
+        <button>
+            <ion-icon name='notifications-outline'></ion-icon>
+        </button>
+    </ion-buttons>
+    
+</ion-navbar>
+<ion-tabs crimsoncon tabbarLayout="title-hide" class="tabs" selectedIndex="1" #myTabs #tabsNav>
+    <ion-tab tabIcon="people" tabTitle="People" [root]="people"></ion-tab>
+    <ion-tab tabIcon="person" tabTitle="ME" [root]="me"></ion-tab>
+    <ion-tab tabIcon="bulb" tabTitle="Projects" [root]="search"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,56 @@
+.profile {
+    
+    .fab-add {
+        margin-top: 300px;
+    }
+    
+    .picture {
+
+        display: block;
+        margin: 3rem auto 10px auto;
+        text-align: center;
+        
+        img {
+            border-radius: 50%;
+        }
+    }
+    
+    .name {
+        height: 20px;
+        font-size: 18px;
+    }
+    
+    .counter {
+       font-size: 30px;
+       font-weight: bold;
+       padding: 0;
+       margin: 0;
+    }
+    
+    .icon-size {
+        font-size: 28px;
+    }
+    
+    .skill-description {
+        color: #666; font-style: italic
+    }
+    
+    .interest-description {
+        color: #666; font-style: italic
+    }
+    
+    .add-button {
+        height: 100px;
+    }
+    
+    .add-button ion-icon {
+        font-size: 100px;
+    }
+    
+    .profile-buttons ion-icon {
+        
+        font-size: 50px;
+        
+    }
+
+}

@@ -1,0 +1,70 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="pins" iteratedItems>
+  
+  <ion-toolbar light>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Search your pins..."></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let pin of items, let i = index" class="thumb">
+      <button ion-item (click)="goToPin(pin, i)">
+          <ion-thumbnail item-left>
+            <img class="profile" [src]="pin?.image" *ngIf="pin.type == 'profile'">
+            <img class="circle" [src]="pin?.image" *ngIf="pin.type == 'circle'">
+            <ion-row baseline class="center-text" *ngIf="pin.type == 'profile'">
+                <ion-col width-33><p class="counter">{{pin?.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{pin?.circles}}</p><ion-icon name='contacts' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{pin?.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+            <ion-row baseline class="center-text" *ngIf="pin.type == 'circle'">
+                <ion-col width-50><p class="counter">{{pin?.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-50><p class="counter">{{pin?.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+          </ion-thumbnail>
+          
+          <div *ngIf="pin.type == 'profile'">
+            <h2>{{pin?.name}}</h2>
+            <p>{{pin?.university}} • {{pin?.year}}</p>
+            <p>{{pin?.department}}</p>
+<!--            <button class="inner-button" crimson clear (click)="goToPin(pin, i)"><ion-icon name='eye'></ion-icon> View Profile</button>-->
+          </div>
+
+          <div *ngIf="pin.type == 'circle'">          
+            <h2>{{pin?.name}}</h2>
+            <p><ion-icon name='time' grey> </ion-icon> Next Meeting: {{pin?.meeting}}</p>
+            <p><ion-icon name='navigate' grey> </ion-icon> {{pin?.location}}</p>
+            <p><ion-icon name='map' grey> </ion-icon> {{pin?.address}}</p>
+            <p>{{pin?.department}}</p>
+<!--            <button class="inner-button" crimson clear (click)="goToPin(pin, i)"><ion-icon name='eye'></ion-icon> View circle</button>-->
+            <ion-scroll class="members" scrollX="false" scrollY="true">
+                <div class="content" id="content" [ngStyle]="{'width': contentWidth}">
+                    <img *ngFor="let member of getDummyProfiles, let i = index" [src]="member.image">
+                </div>
+            </ion-scroll>
+          </div>
+      </button> 
+          <ion-item-options>
+            <button class="padding-xtra-small" crimson (click)="unpinAlert(pin)">Unpin
+              <ion-icon name='pin'></ion-icon>
+            </button>
+          </ion-item-options>     
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>

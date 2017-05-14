@@ -1,0 +1,108 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+<!--
+    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content padding class="edit-me">
+  
+  <ion-list>
+    
+  <ion-list-header>
+    General
+  </ion-list-header>  
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" placeholder="PinPointUser" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="currentProfile.name" placeholder="Pinpoint User"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>My University</ion-label>
+      <ion-select okText="Okay">
+        <ion-option value="bacon">Oxford University</ion-option>
+        <ion-option value="olives" checked="true">Imperial College</ion-option>
+        <ion-option value="peppers">Manchester University</ion-option>
+        <ion-option value="mushrooms">Cambridge University</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>My Department</ion-label>
+      <ion-select okText="Okay">
+        <ion-option value="bacon" checked="true">Computer Science</ion-option>
+        <ion-option value="olives">English</ion-option>
+        <ion-option value="peppers">Mathematics</ion-option>
+        <ion-option value="mushrooms">Science</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+      
+      <ion-list-header>
+          Edit Your Avatar
+      </ion-list-header>         
+          
+  </ion-list>
+
+  <div class="profile-photo">
+      <ion-icon name="person-add" class="fill-box"></ion-icon>
+  </div>
+
+  <button block crimson class="margin-top-small"> <ion-icon name="cloud-upload"></ion-icon> Upload Photo</button>
+  
+  <ion-list class="margin-top-small">
+      
+    <ion-list-header>
+        Edit About Me
+    </ion-list-header> 
+    <!--Use <ion-textarea></ion-textarea> instead-->  
+    <ion-item>
+      <textarea class="textarea-general" type="textarea" placeholder="Hi guys..." wrap="hard"></textarea>
+    </ion-item> 
+    
+    <ion-list-header class="margin-top-small">
+        My Skills
+    </ion-list-header> 
+
+    <ion-item *ngFor="let skill of currentProfile.skills, let i = index">
+      <ion-label>{{skill.name}}</ion-label>
+      <ion-checkbox crimson checked="true"></ion-checkbox>
+      <button small outline item-right (click)="editSkillModal(skill)">Edit</button>
+      <button small danger outline item-right (click)="deleteSkill(i)">Delete</button>
+    </ion-item>    
+
+    <ion-list-header class="margin-top-small">
+        My Interests
+    </ion-list-header>    
+    
+    <ion-item *ngFor="let interest of currentProfile.interests, let i = index">
+      <ion-label>{{interest.name}}</ion-label>
+      <ion-checkbox crimson checked="true"></ion-checkbox>
+      <button small outline item-right (click)="editInterestModal(interest)">Edit</button>
+      <button small danger outline item-right (click)="deleteInterest(i)">Delete</button>
+    </ion-item>  
+       
+          
+  </ion-list>
+  
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+    
+    <ion-buttons (click)="openRightMenu()" end>    
+        <button>
+            <ion-icon name='options'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+    
+</ion-navbar>
+
+<ion-content class="people" can-swipe-back="false">
+  
+  <ion-toolbar light>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Search people..."></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let people of items, let i = index" class="thumb">
+      <button ion-item (click)="goToUser(people)">
+          <ion-thumbnail item-left>
+            <img [src]="people.image">
+            <ion-row baseline class="center-text">
+                <ion-col width-33><p class="counter">{{people.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{people.circles}}</p><ion-icon name='contacts' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{people.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+          </ion-thumbnail>
+          <h2>{{people.name}}</h2>
+          <p>{{people.university}} • {{people.year}}</p>
+          <p class="crimsonise" style="margin-bottom: 10px">{{people.department}}</p>
+          <p class="bolden">Skills:</p>
+          <p class="italicise"><span *ngFor="let skill of people.skills">{{skill.name}}, </span></p>
+          <p class="bolden">Interests:</p>
+          <p class="italicise"><span *ngFor="let int of people.interests">{{int.name}}, </span></p>
+          <button class="inner-button" crimson clear><ion-icon name='eye'></ion-icon> View Profile</button>
+      </button> 
+          <ion-item-options>
+            <button class="padding-xtra-small" light (click)="messageFriend()">Message
+              <ion-icon name='mail'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" crimson (click)="pinFriend(people)">Pin
+              <ion-icon name='pin'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" (click)="addFriend(people)" danger>
+              <ion-icon name='person-add'></ion-icon>
+            </button>
+          </ion-item-options>     
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>

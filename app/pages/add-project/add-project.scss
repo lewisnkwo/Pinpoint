@@ -1,0 +1,25 @@
+.add-project {
+      
+    .profile-photo {
+        
+        margin-top: $small-spacing;
+        margin-right: auto;
+        margin-left: auto;
+        width: 150px;
+        height: 150px;
+        border: 0px;
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+        }
+        
+    }
+    
+    .fill-box {
+        font-size: 150px;
+        color: #ccc;
+        padding-left: 23px;
+    }
+
+}

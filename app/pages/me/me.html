@@ -1,0 +1,50 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+    <ion-buttons (click)="goToNotifications()" end>
+        <button>
+            <ion-icon name='mail'></ion-icon>
+        </button>
+        <button>
+            <ion-icon name='notifications-outline'></ion-icon>
+        </button>
+    </ion-buttons>
+    
+</ion-navbar>
+
+<ion-content class="profile" can-swipe-back="false">
+    
+    <h2 class="name center-text">{{currentProfile.name}}</h2>
+
+    <a (click)="showDetail()"><div class="picture"><img [src]="currentProfile.image" width="150px" height="150px"/></div></a>
+
+    <p class="header-text reduce-margin-header">profile</p>
+    <button block crimson large clear (click)="addProject()" class="add-button margin-top-small"><ion-icon name="add-circle"></ion-icon></button>
+    <p class="header-text reduce-margin-header">add project</p>
+
+<!--    <ion-toolbar class="profile-buttons">
+        
+        <ion-buttons start>    
+            <button crimson (click)="goToPeople()">
+                <ion-icon crimson name='arrow-back'></ion-icon> people
+            </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+            <button crimson (click)="goToProjects()">
+              projects  <ion-icon name='arrow-forward'></ion-icon>
+            </button>
+        </ion-buttons>
+        
+    </ion-toolbar>-->
+
+</ion-content>
+
+

@@ -1,0 +1,56 @@
+.who-are-you {
+
+    .profile-photo {
+        
+        margin-top: $small-spacing;
+        margin-right: auto;
+        margin-left: auto;
+        width: 150px;
+        height: 150px;
+        border: 0px;
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+        }
+        
+    }
+    
+    .fill-box {
+        font-size: 150px;
+        color: #ccc;
+        padding-left: 23px;
+    }
+    
+    .who-2 {
+        
+        .suggested-header {
+            font-size: 16px;
+            font-style: italic;
+        }
+        
+        .suggested-text {
+            color: #DC143C;
+            padding: 2px;
+            margin: 2px;
+        }
+        
+    }
+    
+    ion-searchbar {
+        border-radius: 10px;
+    }
+    
+    .segment-padding {
+        padding: 10px 50px 0px;
+    }
+    
+    .segment-button {
+        padding: 10px;
+        height: 5.2rem;
+    }
+    
+    .who-icon-size {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,55 @@
+<ion-content padding class="signup">
+    
+    
+    <img class="medium-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/general-logo.png" width="75px" height="75px">
+    <p class="header-text">Create an account</p>
+    
+<ion-list>
+    
+    <ion-item class="no-border">
+        <ion-label>Email</ion-label>
+        <ion-input type="email" class="center-label"></ion-input>
+    </ion-item>
+
+    <ion-item class="no-border">
+        <ion-label>Username</ion-label>
+        <ion-input type="text" class="center-label"></ion-input>
+    </ion-item>
+
+    <ion-item class="no-border">
+        <ion-label>Password</ion-label>
+        <ion-input type="password" class="center-label"></ion-input>
+    </ion-item>
+
+    <ion-item class="center-label">
+        <ion-label>I've read the <a crimson>Terms Of Use</a></ion-label>
+        <ion-checkbox dark checked="true"></ion-checkbox>
+    </ion-item>
+
+</ion-list>
+
+<p class="header-text">or sign in with</p>
+    
+<ion-row baseline class="signin-buttons">
+    
+    <ion-col width-33>
+        <button fab facebook>
+            <ion-icon name='logo-facebook'></ion-icon>
+        </button>   
+    </ion-col>
+    <ion-col width-33>
+        <button fab linkedin>
+            <ion-icon name='logo-linkedin'></ion-icon>
+        </button>    
+    </ion-col>
+    <ion-col width-33>     
+        <button fab positive>
+            <ion-icon name='logo-twitter'></ion-icon>
+        </button>
+    </ion-col>
+    
+</ion-row>
+
+<button block crimson large clear class="margin-top-small" (click)="goNext()">next</button>
+  
+</ion-content>

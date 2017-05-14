@@ -1,0 +1,94 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="profile">
+
+    <ion-row>
+        <ion-col width-25 class="column-spacing">
+            <div class="picture"><img [src]="profileData?.image" /></div>
+            <button small class="center-add-button" style="z-index: 999" (click)="addFriendAlert()">
+              <ion-icon name='person-add' is-active="false"></ion-icon> Add
+            </button>
+            <button small purple class="center-send-button" style="z-index: 999" (click)="messageFriend()">
+              <ion-icon name='mail' is-active="false"></ion-icon> Send
+            </button>
+        </ion-col>
+        
+        <ion-col width-75 padding>
+            <div class="name center-text">{{profileData?.name}}</div>
+            
+            <ion-row baseline class="center-text">
+                <ion-col width-33 (click)="goToBuddies()"><p class="counter">{{profileData?.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33 (click)="goToCircles()"><p class="counter">{{profileData?.circles}}</p><ion-icon name='contacts' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33 (click)="goToPins()"><p class="counter">{{profileData?.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+            <h5><strong>{{profileData?.university}}</strong> • {{profileData?.year}}<br />{{profileData?.department}}</h5>
+        </ion-col>
+
+    </ion-row>
+    
+    <ion-card>
+
+        <h1 padding>My Bio</h1>
+        
+        <p padding>Hey there! I am currently a {{profileData?.year}} student of {{profileData?.university}}, in the {{profileData?.department}} department. Have a look at my skills/interests and <ion-icon name='pin' class="icon-size" crimson></ion-icon> me if you're mutual!</p>
+
+    </ion-card>
+    
+    <ion-card>
+
+        <h1 padding>My Skills</h1>
+
+        <ion-item *ngFor="let s of profileData.skills | shuffle">
+            <ion-icon crimson [name]="s.iconName" item-left large></ion-icon>
+            <h2>{{s?.name}}</h2>
+            <p>{{s?.desc}}</p>
+        </ion-item>
+
+        <ion-item>
+            <span item-left><h5>Last Updated: 45 mins ago</h5></span>
+        </ion-item>
+
+    </ion-card>
+
+    <ion-card>
+
+        <h1 padding>My Interests</h1>
+        
+        <ion-item *ngFor="let i of profileData.interests | shuffle">
+            <ion-icon crimson [name]="i.iconName" item-left large></ion-icon>
+            <h2>{{i?.name}}</h2>
+            <p>{{i?.desc}}</p>
+        </ion-item>
+        
+        <ion-item>
+            <span item-left><h5>Last Updated: 108 mins ago</h5></span>
+        </ion-item>
+
+    </ion-card>
+
+</ion-content>
+
+<button fab crimson fab-bottom fab-right style="z-index: 999;" (click)="pinContent()">
+    <ion-icon name="pin"></ion-icon>
+</button>
+
+
+<!--<button fab crimson fab-bottom fab-center style="z-index: 999" (click)="pinContent()">
+  <ion-icon name='pin' is-active="false"></ion-icon>
+</button>-->

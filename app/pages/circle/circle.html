@@ -1,0 +1,87 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+<!--
+    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="circle">
+  
+    <div style="position: relative">
+      <img src="https://pinp-draft.s3.amazonaws.com/yoga.jpg">
+      <button fab fab-right fab-top crimson class="fab-map" (click)="joinedCircleAlert()">
+        <ion-icon name='person-add'></ion-icon>
+      </button>
+      <button fab fab-right fab-top orange class="fab-map fab-under" (click)="sendMessage()">
+        <ion-icon name='mail'></ion-icon>
+      </button>
+    </div>
+
+    <p class="center-text padding-xtra-small">You don't need to be 25, supple, a size 6 and to eat tofu to benefit from yoga! It suits any body shape or life stage – kids, teens, pregnancy, middle and advanced years. Our society will offer something perfect for you.</p>
+    
+    <button ion-item (click)="joinedCircleEventAlerts()">
+      <ion-icon name="calendar" item-left crimson large></ion-icon>
+      <h2>Sign up to Circle Events </h2> 
+    </button>
+    
+    <ion-item>
+      <ion-icon name="clock" item-left grey large></ion-icon>
+      <h2>6:00pm - 8:00pm</h2>
+      <p> 2/3 hours a week </p>
+    </ion-item>
+    
+    <ion-item class="margin-bottom-xtra-small">
+      <ion-icon name="finger-print" item-left grey large></ion-icon>
+      <h2><strong>8.1</strong></h2>
+      <p> PinPoint Match </p>
+    </ion-item>
+
+    <button class="join-button orange no-margin" orange full item-left (click)="joinedCircleAlert()">
+      <ion-icon name="contacts"></ion-icon> Join Circle
+    </button>  
+    <button class="no-margin" crimson full item-left (click)="pinContent()">
+    <ion-icon name="pin"></ion-icon> Pin
+    </button>
+
+    <ion-item class="no-margin">
+      <button crimson clear item-left>
+        <ion-icon name="pin"></ion-icon>
+        <div>53 Pins</div>
+      </button>
+      <button crimson clear item-left>
+        <ion-icon name="people"></ion-icon>
+        <div>20 Members</div>
+      </button>
+      <ion-note item-right>
+        Last updated: 2h ago
+      </ion-note>
+    </ion-item>
+    
+    <p><ion-icon name='contacts' class="icon-size margin-left-small" crimson></ion-icon> Circle Members</p>
+    <ion-scroll class="buddies" scrollX="true" scrollY="false">
+        <div class="content" id="content" [ngStyle]="{'width': contentWidth}" iteratedItems>
+            <img *ngFor="let member of getDummyProfiles, let i = index" [src]="member.image" (click)="goToUser(member, i)">
+        </div>
+    </ion-scroll>
+
+</ion-content>
+
+<ion-toolbar position="bottom">
+     <ion-buttons start>
+        <button (click)="goBack()" crimson>
+            <ion-icon name="arrow-dropleft"></ion-icon> Back 
+        </button>
+    </ion-buttons> 
+</ion-toolbar>
+

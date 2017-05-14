@@ -1,0 +1,60 @@
+.projects {
+    
+    .thumb img {
+        border-radius: 50%;
+        max-height: 8rem;
+        max-width: 8rem;
+    }
+    
+    .spacing {
+        margin-left: 3.3rem;
+    }
+    
+    .counter {
+        font-weight: bold;
+    }
+    
+    .text-spacing {
+        margin-left: 3.3rem;
+        font-weight: bold;
+        margin-top: 2px;
+        
+        .buddies {
+            font-size: 12px;
+            margin-left: 1px;   
+        }
+
+        .circles {
+            font-size: 12px;
+            margin-left: 2px;              
+        }
+        
+        .pins {
+            font-size: 12px;
+            margin-left: 1px;             
+        }
+    }
+    
+    .inner-button {
+        padding: 0;
+        text-transform: capitalize;
+    }
+    
+    .members {
+        height: 100px;
+        
+        img {
+            @extend .avatar-xtra-small;
+            margin: 5px;
+            border-radius: 50%;
+            float: left;
+        }
+    }
+
+}
+
+/*.fab-projects {
+    top: 36px;
+    right: 5px;
+}
+*/

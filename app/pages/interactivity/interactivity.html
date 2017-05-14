@@ -1,0 +1,95 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="interactivity">
+
+  <div class="notifications-bg">
+        <button block large crimson item-left (click)="goToNotifications()">
+            Notifications <ion-icon name='notifications'></ion-icon>
+            <ion-badge item-right secondary>4</ion-badge>
+        </button>
+  </div>
+  
+  <div padding>
+  <ion-list>
+    
+    <ion-list-header>
+    <ion-icon name='person' class="icon-size" crimson></ion-icon> Profile views this week:
+    </ion-list-header>
+    <ion-item>
+      <h1 class="center-text" item-right><ion-icon name='eye' crimson class="icon-size"></ion-icon> <strong>125</strong></h1>
+      <ion-avatar item-left>
+        <img src="https://randomuser.me/api/portraits/women/24.jpg">
+      </ion-avatar>
+      <p><em>Latest profile viewed:</em></p>
+      <h2>Rey</h2>
+      <h3>In love with Science & Star Wars!</h3>
+    </ion-item>
+    
+    <ion-list-header>
+    <ion-icon name='contacts' class="icon-size" crimson></ion-icon> Your project views this week:
+    </ion-list-header>
+    <ion-item>
+      <h1 class="center-text" item-right><ion-icon name='eye' crimson class="icon-size"></ion-icon> <strong>210</strong></h1>
+      <ion-avatar item-left>
+        <img src="https://randomuser.me/api/portraits/men/23.jpg">
+      </ion-avatar>
+      <p><em>Latest viewed by:</em></p>
+      <h2>Finn</h2>
+      <h3>Just happened to have the best name in the galaxy</h3>
+    </ion-item>
+   <ion-item>
+    <p><em>Latest viewed project:</em></p>
+    <ion-thumbnail item-left>
+      <img class="circular" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/founders.jpg">
+    </ion-thumbnail>
+    <h2>Social Media Growth</h2>
+    <p>Imperial College London <br />Entrepreneurial Spirit</p>
+    <button clear item-right crimson><ion-icon name='contacts' class="icon-size" crimson></ion-icon> View</button>
+  </ion-item>
+  
+  <ion-list-header>
+  <ion-icon name='pin' class="icon-size" crimson></ion-icon> Total pins this week:
+  </ion-list-header>
+    <ion-item>
+      <h1 class="center-text" item-right><ion-icon name='pin' crimson class="icon-size"></ion-icon> <strong>13</strong></h1>
+      <ion-avatar item-left>
+        <img src="https://randomuser.me/api/portraits/women/35.jpg">
+      </ion-avatar>
+      <p><em>Latest pin:</em></p>
+      <h2>Princess Leia</h2>
+      <h3>#EatSleepExercise!</h3>
+    </ion-item>
+    
+  <ion-list-header>
+  <ion-icon name='calendar' class="icon-size" crimson></ion-icon> Total projects joined this month:
+  </ion-list-header>
+   <ion-item>
+    <h1 class="center-text" item-right><ion-icon name='contacts' crimson class="icon-size"></ion-icon> <strong>5</strong></h1>
+    <p><em>Latest project joined:</em></p>
+    <ion-thumbnail item-left>
+      <img class="circular" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/rowing.jpg">
+    </ion-thumbnail>
+    <h2>Product Design</h2>
+    <p>Imperial College London <br /> Design & Tech Department</p>
+  </ion-item>
+    
+  </ion-list>
+  </div>
+
+</ion-content>

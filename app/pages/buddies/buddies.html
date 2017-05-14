@@ -1,0 +1,54 @@
+<ion-navbar *navbar crimson hideBackButton>
+    
+    <ion-buttons (click)="openLeftMenu()" start>    
+        <button>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title><img class="navbar-logo" src="https://pinp-draft.s3-eu-west-1.amazonaws.com/navbar-logo.png"></ion-title>
+
+<!--    <ion-buttons (click)="goBack()" end>
+        <button>
+            <ion-icon name='arrow-back'></ion-icon> Back
+        </button>
+    </ion-buttons>-->
+    
+</ion-navbar>
+
+<ion-content class="buddies">
+  
+  <ion-toolbar light>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Search your buddies..."></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let profile of items, let i = index" class="thumb">
+      <button ion-item (click)="goToUser(profile)">
+          <ion-thumbnail item-left>
+            <img [src]="profile.image">
+            <ion-row baseline class="center-text">
+                <ion-col width-33><p class="counter">{{profile.buddies}}</p><ion-icon name='people' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{profile.circles}}</p><ion-icon name='contacts' class="icon-size" crimson></ion-icon></ion-col>
+                <ion-col width-33><p class="counter">{{profile.pins}}</p><ion-icon name='pin' class="icon-size" crimson></ion-icon></ion-col>
+            </ion-row>
+          </ion-thumbnail>
+          <h2>{{profile.name}}</h2>
+          <p>{{profile.university}} • {{profile.year}}</p>
+          <p>{{profile.department}}</p>
+          <button class="inner-button" crimson clear><ion-icon name='eye'></ion-icon> View Profile</button>
+      </button> 
+          <ion-item-options>
+            <button class="padding-xtra-small" light (click)="messageFriend()">Message
+              <ion-icon name='mail'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" crimson (click)="pinFriend(profile)">Pin
+              <ion-icon name='pin'></ion-icon>
+            </button>
+            <button class="padding-xtra-small" danger (click)="removeFriend(i)">Unfriend
+              <ion-icon name='close-circle'></ion-icon>
+            </button>
+          </ion-item-options>     
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>
